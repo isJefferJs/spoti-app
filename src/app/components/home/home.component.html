@@ -1,1 +1,13 @@
-<p>Home work</p>
+<div class="card-columns">
+  <div class="card" *ngFor="let sogn of newSogns">
+    <img class="card-img-top" [src]='sogn.images[0].url' alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ sogn.artists[0].name }}</h5>
+      <p class="card-text">
+        <span class="badge badge-dark" *ngFor="let artist of sogn.artists">
+          {{ artist.name }}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
