@@ -1,1 +1,13 @@
-<p>search works!</p>
+<div class="row">
+  <div class="col">
+    <input 
+      #termino
+      type="text" 
+      name="search" 
+      id="search"
+      class="form-control"
+      (keyup)="buscar(termino.value)"
+      placeholder="Buscar artista"
+    />
+  </div>
+</div>
