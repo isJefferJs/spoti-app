@@ -10,13 +10,12 @@ export class SearchComponent implements OnInit {
 
   public artists: any[] = [];
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(private spotifyService: SpotifyService) {}
 
   ngOnInit() {
   }
 
   buscar(termino: string) {
-    console.log(termino);
     this.spotifyService.getArtist(termino)
         .subscribe((data: any) => {
           this.artists = data;
