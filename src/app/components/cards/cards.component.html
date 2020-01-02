@@ -1,11 +1,18 @@
 <div class="card-columns mt-5 animated fadeIn">
-  <div class="card" *ngFor="let item of items">
-    <img class="card-img-top" [src]='item.images | noimage' alt="Card image cap" />
+  <div 
+    class="card puntero"
+    (click)="verArtist(item)"
+    *ngFor="let item of items"
+  >
+    <img
+      class="card-img-top"
+      [src]="item.images | noimage"
+      alt="Card image cap"
+    />
     <div class="card-body">
-      
       <h5 class="card-title" *ngIf="isSong">{{ item.artists[0].name }}</h5>
       <h5 class="card-title" *ngIf="!isSong">{{ item.name }}</h5>
-      
+
       <!-- below will stay if the item is a song. -->
       <p class="card-text" *ngIf="isSong">
         <span class="badge badge-dark" *ngFor="let artist of item.artists">
@@ -15,6 +22,3 @@
     </div>
   </div>
 </div>
-
-
-
