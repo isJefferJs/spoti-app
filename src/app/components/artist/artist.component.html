@@ -19,3 +19,41 @@
     <button class="btn btn-outline-light">Regresar</button>
   </div>
 </div>
+
+<div class="row mt-5 animated fadeIn">
+  <div class="col">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Album</th>
+          <th>Canción</th>
+          <th>Vista previa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let track of topTracks">
+          <td>
+            <img
+              [src]="track.album.images | noimage"
+              class="img-fluid img-thumb"
+            />
+          </td>
+          <td>{{ track.album.name }}</td>
+          <td>{{ track.name }}</td>
+          <td>
+            <!-- <audio [src]="track.preview_url" controls></audio> -->
+            <iframe
+              [src]="track.uri | domseguro: 'https://open.spotify.com/embed?uri='"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
